@@ -27,7 +27,9 @@ pipeline {
                 echo 'Archive Jar...'
                  dir('demo') {
                		 archiveArtifacts artifacts: 'target/*.jar', 
-               		 fingerprint: true
+               		 allowEmptyArchive: true,
+                     fingerprint: true,
+                     onlyIfSuccessful: true
                }
             }
         }
