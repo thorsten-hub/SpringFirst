@@ -26,8 +26,8 @@ pipeline {
             steps {
                 echo 'Archive Jar...'
                  dir('demo') {
-               		 archiveArtifacts artifacts: 'target/*.jar'
-               		  fingerprint: true
+               		 archiveArtifacts artifacts: 'target/*.jar', 
+               		 fingerprint: true
                }
             }
         }
