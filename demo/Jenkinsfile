@@ -22,10 +22,12 @@ pipeline {
                }
             }
         }
-        stage('Deploy') {
+        stage('Archive Jar') {
             steps {
-                echo 'deploy...'
-                // Your deployment steps here
+                echo 'Archive Jar...'
+                 dir('demo') {
+               		 archiveArtifacts artifacts: 'target/*.jar'
+               }
             }
         }
     }
